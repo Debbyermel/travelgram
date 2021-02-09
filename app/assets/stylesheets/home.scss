@@ -16,6 +16,7 @@
 
 html {
   font-size: 62.5%;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -53,6 +54,10 @@ h5 {
 .main-header {
  background-color: var(--secondary-color);
  color: var(--primary-color);
+  position: sticky;
+  top: 0;
+  z-index: 3;
+
 }
 
 nav {
@@ -88,10 +93,10 @@ a {
 
 .hero {
   align-items: center;
+  background: linear-gradient(rgba(0, 0, 0, 0.8), transparent), url("landing-page.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  background: linear-gradient(rgba(0, 0, 0, 0.5), transparent), url('landing-page.jpg');
   color: var(--primary-color);
   display: flex;
   flex-direction: column;
@@ -141,14 +146,12 @@ button:hover {
 }
 
 .locations-head {
-  font-family: inherit;
   margin: auto;
   text-transform: capitalize;
   width: 90%;
 }
 
 .locations-head h2 {
-  font-weight: 200;
   padding: 1rem 0;
   text-decoration: underline;
   text-decoration-thickness: 0.5rem;
@@ -158,7 +161,6 @@ button:hover {
   background: linear-gradient(#131c27, #663b34);
   background-clip: text;
   display: inline;
-  font-weight: 200;
   padding: 1rem 0;
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
@@ -173,12 +175,133 @@ button:hover {
   animation: cloudAnimation 10s infinite alternate ease-in-out;
 }
 .moving-cloud-2 {
-  top: 20%;
+  top: 10%;
   z-index: -1;
   opacity: 0.5;
-  animation: cloudAnimation 12.5s infinite alternate ease-in-out;
+  animation: cloudAnimation 10.5s infinite alternate ease-in-out;
 }
 
+.benefits-head {
+  align-items: center;
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+  min-height: 30vh;
+  padding: 3rem;
+  text-align: center;
+}
+
+.benefits-head h3  {
+  font-weight: 300;
+  padding-left: 1rem;
+}
+
+.cards {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+  min-height: 50vh;
+  width: 90%;
+}
+
+.card {
+  box-shadow: 0 10px 10px rgba(0 , 0, 0, 0.1), 0 20px 20px rgba(0 , 0, 0, 0.1);
+  flex: 1 1 30rem;
+  margin: 2rem 5rem;
+  min-height: 40vh;
+  text-align: center;
+}
+
+.card img {
+  margin:  2rem;
+  max-width: 15%;
+}
+
+.card-icon {
+  background-color: var(--highlight-color);
+}
+
+.card h4,
+.card p {
+  padding: 1rem;
+}
+
+#contact {
+  align-items: center;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), transparent), url("contact-mountain.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.form-wrapper {
+  background: rgba(19, 28, 39, 0.8);
+  border-radius: 20px;
+  color: var(--highlight-color);
+  width: 60%;
+}
+
+.form-head {
+  padding: 4rem;
+  text-align: center;
+}
+
+.name-form,
+.email-form {
+  padding: 3rem;
+  text-align: center;
+}
+
+.form-wrapper label {
+  margin: 0rem 3rem;
+}
+
+.form-wrapper button {
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  margin-top: 8rem;
+  padding: 2rem;
+  width: 100%;
+}
+
+.form-wrapper input {
+  padding: 1rem 3rem;
+}
+
+footer {
+  background: rgba(19, 28, 39, 0.8);
+  color: var(--primary-color);
+}
+
+.footer-wrapper {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+  min-height: 10vh;
+  padding: 2rem;
+  width: 90%;
+}
+
+footer h5 {
+  flex: 1 1 40rem;
+}
+
+footer ul {
+  align-items: center;
+  display: flex;
+  flex: 1 1 40rem;
+  justify-content: space-between;
+  list-style: none;
+}
+
+// Animations
 @keyframes cloudAnimation {
   from {
     transform: translate(10%, -10%);
@@ -199,5 +322,39 @@ button:hover {
 
   #logo {
     padding: 0.5rem 2rem 2rem 2rem ;
+  }
+
+  .cloud {
+    height: 40rem;
+    pointer-events: none;
+  }
+
+  .moving-cloud-1 {
+    z-index: 1;
+  }
+
+  .moving-cloud-2 {
+    z-index: -2;
+  }
+
+  .locations-head h3 {
+    background: rgba(19, 28, 39, 0.9);
+    -webkit-text-fill-color: var(--primary-color);
+  }
+
+  .card {
+    min-height: 25vh;
+  }
+
+  .form-wrapper {
+    width: 85%;
+  }
+
+  footer {
+    text-align: center;
+  }
+
+  footer h5 {
+    padding: 3rem;
   }
 }

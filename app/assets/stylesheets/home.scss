@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pattaya&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -8,10 +11,15 @@
   --primary-color: #fff;
   --secondary-color: #131c27;
   --content--color: rgb(180, 134, 88);
+  --highlight-color: #acd0b4;
 }
 
 html {
   font-size: 62.5%;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
 }
 
 h1 {
@@ -50,26 +58,31 @@ h5 {
 nav {
   align-items: center;
   display: flex;
+  flex-wrap: wrap;
+  list-style: none;
   margin: auto;
   min-height: 10vh;
   padding: 2rem;
   width: 90%;
-  list-style: none;
 }
 
 nav ul {
+  align-items: center;
   color: var(--secondary-color);
   display: flex;
   flex: 1 1 40rem;
   justify-content: space-around;
-  align-items: center;
 }
 
 #logo {
+  color: var(--highlight-color);
   flex: 1 1 40rem;
+  font-family: 'Pattaya', Arial, Helvetica, sans-serif;
+  font-weight: 200;
 }
 
 a {
+  color: var(--primary-color);
   text-decoration: none;
 }
 
@@ -78,12 +91,12 @@ a {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  background:linear-gradient(rgba(0, 0, 0, 0.5), transparent), asset-url('landing-page.jpg');
+  background: linear-gradient(rgba(0, 0, 0, 0.5), transparent), url('landing-page.jpg');
   color: var(--primary-color);
   display: flex;
   flex-direction: column;
   justify-content: center;
-  min-height: 90vw;
+  min-height: 90vh;
   text-align: center;
 }
 
@@ -92,15 +105,99 @@ a {
 }
 
 button {
-  background-color: var( --content--color);
+  background-color: var(--highlight-color);
   border-radius: 5px;
   border: none;
   color: var(--primary-color);
   cursor: pointer;
   font-size: 2rem;
   padding: 2rem 6rem;
+  transition: background 1s ease-in-out;
 }
 
 button:active {
   outline: none;
+}
+
+button:hover {
+  background-color: #efe;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1) 0 3px 6px rgba(0, 0, 0, 0.1);
+  color: var(--secondary-color);
+  font-weight: 900;
+  opacity: 0.8;
+}
+
+#locations {
+  align-items: center;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), transparent), url('new-york-page.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.locations-head {
+  font-family: inherit;
+  margin: auto;
+  text-transform: capitalize;
+  width: 90%;
+}
+
+.locations-head h2 {
+  font-weight: 200;
+  padding: 1rem 0;
+  text-decoration: underline;
+  text-decoration-thickness: 0.5rem;
+}
+
+.locations-head h3 {
+  background: linear-gradient(#131c27, #663b34);
+  background-clip: text;
+  display: inline;
+  font-weight: 200;
+  padding: 1rem 0;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+}
+
+.cloud {
+  position: absolute;
+  top: 0%;
+  right: 0%;
+}
+.moving-cloud-1 {
+  animation: cloudAnimation 10s infinite alternate ease-in-out;
+}
+.moving-cloud-2 {
+  top: 20%;
+  z-index: -1;
+  opacity: 0.5;
+  animation: cloudAnimation 12.5s infinite alternate ease-in-out;
+}
+
+@keyframes cloudAnimation {
+  from {
+    transform: translate(10%, -10%);
+  }
+  to {
+    transform: translate(0%, 0%);
+  }
+}
+
+@media screen and (max-width: 932px) {
+  html {
+    font-size: 45%;
+  }
+
+  nav {
+    text-align: center;
+  }
+
+  #logo {
+    padding: 0.5rem 2rem 2rem 2rem ;
+  }
 }

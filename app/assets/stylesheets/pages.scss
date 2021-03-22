@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
-
 .slider-container {
   position: relative;
   overflow: hidden;
@@ -94,4 +93,27 @@
     flex-direction: column;
     justify-content: center;
   }
+
+  .hero-section {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 0 0 auto;
+    min-height: 90vh;
+    width: 95%;
+  }
+
+  .hero-intro {
+    flex: 2 1 40rem;
+
+  }
+  .hero-images {
+    flex: 1 1 40rem;
+  }
+
+  .hero-elena {
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+  }
+
 }
